@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<!-- Links CSS -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap-dialog.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/layout.css" />
+<link rel="stylesheet" type="text/css" href="css/select2.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/select2-bootstrap.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/datepicker.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/clockpicker.css" rel="stylesheet"/>
+
+<!-- Links JavaScript -->
+<script type="text/javascript"   src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript"   src="js/bootstrap-dialog.js"></script>
+<script type="text/javascript"   src="js/bootstrap.js"></script>
+<script type="text/javascript"   src="js/json2.js"></script>
+<script type="text/javascript"   src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript"   src="js/select2.min.js"></script>
+<script type="text/javascript"   src="js/select2_locale_pt-BR.js"></script>
+<script type="text/javascript"   src="js/jquery.maskedinput-1.3.1.js"></script>
+<script type="text/javascript"   src="js/jquery.maskMoney.js"></script>
+<script type="text/javascript"   src="js/clockpicker.js"></script>
+<script type="text/javascript"   src="js/util.js"></script>
+
+<!--[if IE]>
+    <script>UserBrowser.setup('ie','all')</script>
+<![endif]-->
+<!--[if IE 6]>
+    <script>UserBrowser.setup('ie','6')</script>
+<![endif]-->
+<!--[if IE 7]>
+    <script>UserBrowser.setup('ie','7')</script>
+<![endif]-->
+
+<script type="text/javascript">
+var modal;
+$(document).ready(function() {
+// 	listar();
+	$("#btnNovo").click(function(){
+		novoUsuario();
+	});
+	
+	
+});
+	function fecharModal(){
+		if(modal != undefined && modal != null){
+			modal.close();
+		}
+	}
+	
+	function novoUsuario(){
+		modal = showModal($("#formUsuario").html(), "Cadastrar Novo Usuário", $("#btnsRodape").html(),"lg", function(){
+		},function(){
+			alert("fechou!")
+		});
+	}
+</script>
+<title>Teste Cliente Restful</title>
+</head>
+<body>
+	<div class="">
+		<div class="col-sm-12 ">
+			<div class="page-header">
+				<h1>Lista de Usuários</h1>
+			</div>
+			<table class="table table-striped table-hover table table-bordered">
+				<thead>
+					<tr>
+						<th style="width: 30%;">Nome</th>
+						<th style="width: 20%;">Login</th>
+						<th style="width: 30%;">email</th>
+						<th style="width: 13%;"></th>
+					</tr>
+				</thead>
+				<tbody id="tBodyUsuarios" class="table table-bordered ">
+					<tr>
+						<td>Rogerio Brito de Oliveira</td>
+						<td>rogeribrito84</td>
+						<td>rogeriobrito84@gmail.com</td>
+						<td class="text-center">
+							<button class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i></button>
+							<button  class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-remove"></i></button>
+						</td>
+					</tr>
+					<tr>
+						<td>Rogerio Brito de Oliveira</td>
+						<td>rogeribrito84</td>
+						<td>rogeriobrito84@gmail.com</td>
+						<td class="text-center">
+							<button class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i></button>
+							<button class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-remove"></i></button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+				<button id="btnNovo"  class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Novo</button>
+			<div id="formUsuario" >
+				<div class="form-group ">
+					<label>Nome</label>
+					<div class="form-group">
+						<input class="form-control col-sm-11" type="text" id="campoNome" maxlength="80" placeholder="Informe o nome do usuário."/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>Email</label>
+					<div class="input-group col-sm-9">
+						<input class="form-control" type="email" id="campoEmail" maxlength="80" placeholder="Informe o email do usuário."/>
+						<span class="input-group-addon" id="basic-addon1">email@exemplo.com.br</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group  col-sm-6">
+						<span class="input-group-addon" id="basic-addon1">Login</span>
+						<input class="form-control" type="text" id="campoLogin" maxlength="30"  placeholder="Informe o login do usuário."/>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group  col-sm-4">
+						<span class="input-group-addon" id="basic-addon1">Senha</span>
+						<input class="form-control" type="password" id="campoSenha" maxlength="30"  placeholder="Informe a senha do usuário."/>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group  col-sm-4">
+						<span class="input-group-addon" id="basic-addon1">repetir</span>
+						<input class="form-control" type="password" id="campoRepitirSenha" maxlength="30"  placeholder="Repita a senha do usuário."/>
+					</div>
+				</div>
+			</div>
+			<div id="btnsRodape">
+				<button onclick="fecharModal();" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

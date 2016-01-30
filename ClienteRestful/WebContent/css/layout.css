@@ -1,0 +1,2 @@
+@CHARSET "ISO-8859-1";
+.btn-carregando{background-image: url("../img/loading.gif"); min-width:18em; padding-top: 1.5em;cursor:default; background-position: center center; margin:0px auto;  background-repeat: no-repeat;}
